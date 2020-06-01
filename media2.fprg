@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sidcley"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2020-05-26 03:38:20 "/>
+        <attribute name="created" value="c2lkY2xleTtERVNLVE9QLUUzUUQ0Rkw7MjAyMC0wNS0yNTsiMDc6MDU6NDYgIjsyOTky"/>
+        <attribute name="edited" value="c2lkY2xleTtERVNLVE9QLUUzUUQ0Rkw7MjAyMC0wNS0yNjsiMDM6Mzg6MjAgIjs1OzMwOTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n1, n2, n3, n4, m, t" type="Real" array="False" size=""/>
+            <declare name="nome" type="String" array="False" size=""/>
+            <output expression="&quot;Digite o nome do aluno:&quot;" newline="True"/>
+            <input variable="nome"/>
+            <output expression="&quot;Digite a Primeira Nota:&quot;" newline="True"/>
+            <input variable="n1"/>
+            <output expression="&quot;Digite a Segunda Nota:&quot;" newline="True"/>
+            <input variable="n2"/>
+            <output expression="&quot;Digite a Terceira Nota:&quot;" newline="True"/>
+            <input variable="n3"/>
+            <output expression="&quot;Digite a Quarta Nota:&quot;" newline="True"/>
+            <input variable="n4"/>
+            <if expression="n1&lt;n2 &amp;&amp; n1&lt;n3 &amp;&amp; n1&lt;n4">
+                <then>
+                    <assign variable="t" expression="n2+n3+n4"/>
+                </then>
+                <else>
+                    <if expression="n2&lt;n1 &amp;&amp; n2&lt;n3 &amp;&amp; n2&lt;n4">
+                        <then>
+                            <assign variable="t" expression="n1+n3+n4"/>
+                        </then>
+                        <else>
+                            <if expression="n3&lt;n1 &amp;&amp; n3&lt;n2 &amp;&amp; n3&lt;n4">
+                                <then>
+                                    <assign variable="t" expression="n1+n2+n4"/>
+                                </then>
+                                <else>
+                                    <assign variable="t" expression="n1+n2+n3"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="m" expression="t/3"/>
+            <output expression="&quot;Sua pontua&#231;&#227;o final foi: &quot; &amp; t" newline="True"/>
+            <if expression="m&gt;=7">
+                <then>
+                    <output expression="&quot;PARAB&#201;NS! &quot;&amp; nome &amp; &quot;, Voc&#234; foi APROVADO!!! Sua m&#233;dia foi: &quot; &amp; m" newline="True"/>
+                </then>
+                <else>
+                    <if expression="m&lt;7 &amp;&amp; m&gt;=5">
+                        <then>
+                            <output expression="nome &amp; &quot;, Voc&#234; precisar&#225; fazer a RECUPERA&#199;&#195;O. Sua m&#233;dia foi: &quot; &amp;m" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Infelizmente, &quot;&amp; nome &amp; &quot;, voc&#234; foi REPROVADO. Sua m&#233;dia foi: &quot; &amp;m" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
